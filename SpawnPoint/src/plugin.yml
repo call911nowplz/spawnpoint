@@ -1,0 +1,10 @@
+name: spawnpoint
+author: obi
+version: 1.0
+main: me.obi.spawnpoint.SpawnPoint
+description: spawnpoint
+
+commands:
+  spawnpoint:
+    description: With this Command you can set the Spawn.
+
