@@ -26,12 +26,12 @@ public class Commands extends CommandExecute implements Listener, CommandExecuto
 		Location loc = player.getLocation();
 		if (sender instanceof Player) {
 			if (cmd.getName().equalsIgnoreCase(cmd1)) {
-				plugin.getConfig().set("World", loc.getWorld());
+				plugin.getConfig().set("World", loc.getWorld().getName());
 				plugin.getConfig().set("X", loc.getX());
 				plugin.getConfig().set("Y", loc.getY());
 				plugin.getConfig().set("Z", loc.getZ());
 				plugin.getConfig().set("Pitch", loc.getPitch());
-				plugin.getConfig().set("Yawn", loc.getYaw());
+				plugin.getConfig().set("Yaw", loc.getYaw());
 				plugin.saveConfig();
 				sender.sendMessage(ChatColor.GREEN + "Spawnpoint set!");
 				return true;
