@@ -7,13 +7,16 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 
 import net.md_5.bungee.api.ChatColor;
 import net.minecraft.server.v1_8_R3.CommandExecute;
 
 public class Commands extends CommandExecute implements Listener, CommandExecutor {
-	private Plugin plugin = SpawnPoint.getPlugin(SpawnPoint.class);
+	private SpawnPoint plugin;
+
+	public Commands(SpawnPoint plugin){
+	    this.plugin = plugin;
+	}
 
 	public String cmd1 = "spawnpoint";
 	
