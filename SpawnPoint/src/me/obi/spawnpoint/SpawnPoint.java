@@ -6,7 +6,7 @@ import me.obi.spawnpoint.Events.SpawnEvents;
 import net.md_5.bungee.api.ChatColor;
 
 public class SpawnPoint extends JavaPlugin {
-	private Commands commands = new Commands();
+	Commands commands = new Commands(this);
 
 	public void onEnable() {
 		getCommand(commands.cmd1).setExecutor(commands);
