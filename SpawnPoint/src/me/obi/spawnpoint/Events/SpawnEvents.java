@@ -1,7 +1,7 @@
 package me.obi.spawnpoint.Events;
 
 
-import org.bukkit.Bukkit;
+
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,14 +22,15 @@ public class SpawnEvents implements Listener {
 
 		event.setJoinMessage(ChatColor.GREEN + "[" + ChatColor.WHITE + "+" + ChatColor.GREEN + "]" + ChatColor.WHITE
 				+ player.getName());
-
+        int pitch, yaw;
 		double x, y, z;
-		String world = plugin.getConfig().getString("World");
+		pitch = plugin.getConfig().getInt("Pitch");
+		yaw = plugin.getConfig().getInt("Yaw");
 		x = plugin.getConfig().getDouble("X");
 		y = plugin.getConfig().getDouble("Y");
 		z = plugin.getConfig().getDouble("Z");
 
-		Location spawn = new Location(Bukkit.getWorld(world), x, y, z);
+		Location spawn = new Location(player.getWorld(), x, y, z, yaw, pitch);
 		player.teleport(spawn);
 	}
 
